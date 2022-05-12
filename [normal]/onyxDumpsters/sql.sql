@@ -1,0 +1,17 @@
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES 
+('itemsglassbottle', 'Glass Bottle', 1, 0, 1),
+('wallet', 'Wallet', 1, 0, 1),
+('oldshoe', 'Old Shoe', 1, 0, 1),
+('mouldybread', 'Mouldy Bread', 1, 0, 1),
+('plastic', 'Plastic', 1, 0, 1),
+('electronics', 'Electronics', 1, 0, 1),
+('lowgradefemaleseed', 'Female Seed', 1, 0, 1),
+('lowgrademaleseed', 'Male Seed', 1, 0, 1),
+('deadbatteries', 'Dead Batteries', 1, 0, 1),
+('cellphone', 'Phone', 1, 0, 1),
+('rubber', 'Rubber', 1, 0, 1),
+('brokenfishingrod', 'Broken Fishing Rod', 1, 0, 1),
+('cartire', 'Car Tire', 1, 0, 1),
+('oldring', 'Old Ring', 1, 0, 1),
+('advancedlockpick', 'Advanced Lockpick', 1, 0, 1),
+('expiredburger', 'Expired Burger', 1, 0, 1);

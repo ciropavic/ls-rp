@@ -1,0 +1,6 @@
+{
+    "version": "1.36",
+    "changelog": [
+        "- Fix an important bug which caused player names to be shown from everywhere regardless of distance between two peds."
+    ]
+}

@@ -1,0 +1,26 @@
+* {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container {
+	padding: 10px;
+	text-shadow: 2px 2px 5px #424242;
+    position: absolute;
+    color: rgb(241, 235, 235);
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 45px;
+	text-align: center;
+	background-color: #272727;
+	border-radius: 25px;
+	border: 2px solid #dad9d9 ;
+    /* 기본적으로 숨길려면 Display none 으로 해줘야 함 */
+    display: none;
+    
+}
+
+.small {
+	font-size: 25px;
+}

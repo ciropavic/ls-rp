@@ -1,0 +1,19 @@
+{
+     "token": "ODgyNTkyMzU1OTIyODk0OTQ4.YS9oLw.eNd0_UaB-UmZN74_xQC9XkPxfh4",
+     "prefix": "!",
+     "admin_roleid": "880066690250072125",
+     "discord_whitelist": {
+          "active": true,
+          "role_id": "882927854701142058",
+          "server_id": "879770254308413460"
+     },
+     "old_esx": {
+          "user_accounts": false,
+          "user_inventory": false
+     },
+     "identifier": "license",
+     "wipe_tables": [
+          {"table": "users", "owner": "identifier"},
+          {"table": "addon_account_data", "owner": "owner"}
+     ]
+}

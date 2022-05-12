@@ -1,0 +1,86 @@
+-- TriggerEvent("ls_npcdialogue:exit")
+local display = false
+
+
+
+RegisterCommand("다이얼",function ()
+    Citizen.CreateThread(function()
+        TriggerEvent("dialogue:on", true)
+    end)
+end)
+
+
+
+RegisterCommand("디이얼",function ()
+    Citizen.CreateThread(function()
+        TriggerEvent("dialogue:off", true)
+    end)
+end)
+
+
+RegisterNUICallback("exit", function(data)
+    SendNUIMessage({
+        type ="ui",
+        display=false
+    })
+    SetNuiFocus(false,false)
+end)
+
+RegisterNetEvent("dialogue:on")
+AddEventHandler("dialogue:on",function (value)
+    SendNUIMessage({
+        type = "ui",
+        display = true
+    })
+    SetNuiFocus(true,true)
+    
+end)
+
+RegisterNetEvent("dialogue:off")
+AddEventHandler("dialogue:off",function (value)
+    SendNUIMessage({
+        type ="ui",
+        display=false
+    })
+end)
+
+
+function Alert(name,content,nextscid,btn)
+  SendNUIMessage({
+    action = 'scription',
+    name = name,
+    content = content,
+    nextscid = nextscid,
+  })
+  for _, value in pairs(Config.SelectButton) do
+    if btn == value[1] then
+      SendNUIMessage({
+        action = 'buttonAdd',
+        --여기선 int로 보내줄 가능성이 있음.
+        btnnumber = _,
+        btncontent = value[2],
+        btnnextscid = value[3],
+        btnopenNui = value[4]
+      })
+    end
+  end
+end
+
+-- text. 
+RegisterNetEvent('ls_npcdialogue:Alert')
+AddEventHandler('ls_npcdialogue:Alert',function (scid)
+  print("Alreat Inst")
+  for _, value in pairs(Config.Scription) do
+    if scid == value[1] then
+      Alert(value[2],value[3],value[4],value[5])
+    end
+  end
+end)
+
+RegisterNUICallback(
+  "NextAlert",
+  function (data,cb)
+    TriggerEvent('ls_npcdialogue:Alert',data.scid);
+  end
+
+)

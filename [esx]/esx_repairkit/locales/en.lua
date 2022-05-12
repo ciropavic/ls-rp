@@ -1,0 +1,18 @@
+Locales ['en'] = {
+	['used_kit']					= '수리킷을 사용했습니다.',
+	['must_be_outside']				= '차량 외부에 있어야 합니다.!',
+	['no_vehicle_nearby']			= '주변에 차량이 없습니다.',
+	['finished_repair']				= '차량을 수리하셨습니다.',
+	['finished_tyre_repair']		= '타이어를 교체하였습니다.',
+	['abort_hint']					= '취소하려면 ~INPUT_VEH_DUCK~ 를 누르십시오.',
+	['aborted_repair']				= '수리 ~r~중단 ~w~',
+	['aborted_tyre_repair']			= '교체 ~r~중단 ~w~',
+	['car_destroy']					= '엔진의 수명이 다 되었습니다. ...',
+	['car_dead']					= '이 파손은 수리할 수 없습니다....',
+	['not_near_tyre']				= '당신은 타이어 앞에 있지 않습니다.',
+	['not_near_engine']				= '당신은 엔진 앞에 있지 않습니다.',
+	['MechIsOnline']				= '정비사에게 전화하십시오.',
+	['ReparingEngine']				= '엔진 수리 중...',
+	['ReparingTyre']				= '타이어 교체 중...',
+	['Cancelling']					= '취소 중...',
+}
