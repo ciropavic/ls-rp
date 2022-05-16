@@ -50,8 +50,8 @@ WarMenu.CreateSubMenu('demo_points', 'demo', _U('points'))
 WarMenu.CreateSubMenu('confirm', 'demo', _U('conf'))
 WarMenu.CreateSubMenu('demo_exit', 'demo', _U('sure'))
 
-RegisterNetEvent('guille_gangs:client:openCreation')
-AddEventHandler('guille_gangs:client:openCreation', function()
+RegisterNetEvent('ls-gang:client:openCreation')
+AddEventHandler('ls-gang:client:openCreation', function()
 
     if WarMenu.IsAnyMenuOpened() then
         return
