@@ -9,7 +9,15 @@ version '1.0'
 client_scripts {
 	'@es_extended/locale.lua',
 	'client/*.lua',
-	'locales/*.lua'
+	'locales/*.lua',
+  'Client/Modules/warmenu.lua',
+  'Client/Creation.lua',
+  'Client/Modules/Functions.lua',
+  'Client/Modules/Menu.lua',
+  'Client/Modules/Events.lua',
+  'Client/Points.lua',
+  'Client/Modification.lua',
+  'Client/InteractionMenu.lua'
 }
 
 server_scripts {
