@@ -10,14 +10,14 @@ client_scripts {
 	'@es_extended/locale.lua',
 	'client/*.lua',
 	'locales/*.lua',
-  'Client/Modules/warmenu.lua',
-  'Client/Creation.lua',
-  'Client/Modules/Functions.lua',
-  'Client/Modules/Menu.lua',
-  'Client/Modules/Events.lua',
-  'Client/Points.lua',
-  'Client/Modification.lua',
-  'Client/InteractionMenu.lua'
+  'client/Modules/warmenu.lua',
+  'client/Creation.lua',
+  'client/Modules/Functions.lua',
+  'client/Modules/Menu.lua',
+  'client/Modules/Events.lua',
+  'client/Points.lua',
+  'client/Modification.lua',
+  'client/InteractionMenu.lua'
 }
 
 server_scripts {
