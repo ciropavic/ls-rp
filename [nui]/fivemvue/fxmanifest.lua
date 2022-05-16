@@ -1,8 +1,9 @@
+-- Resource Metadata
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Kyeong hoon'
-description 'A Vue JS Test for FiveM'
+author 'GeeGeez'
+description 'A Vue JS boilerplate for FiveM'
 version '1.0.0'
 
 ui_page 'html/index.html'
