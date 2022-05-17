@@ -66,23 +66,23 @@ AddEventHandler('ls-gang:client:openCreation', function()
     while true do
       if WarMenu.Begin('demo') then
         WarMenu.MenuButton('팩션 정보', 'demo_menu')
-        WarMenu.MenuButton('Gang style', 'demo_style')
-        WarMenu.MenuButton('Gang vehicles', 'demo_vehicles')
-        WarMenu.MenuButton('Add points', 'demo_points')
-        WarMenu.MenuButton('Confirm creation', 'confirm')
-        WarMenu.MenuButton('Exit', 'demo_exit')
+        WarMenu.MenuButton('팩션 스타일', 'demo_style')
+        WarMenu.MenuButton('팩션 차량', 'demo_vehicles')
+        WarMenu.MenuButton('팩션 구역', 'demo_points')
+        WarMenu.MenuButton('팩션 만들기', 'confirm')
+        WarMenu.MenuButton('취소', 'demo_exit')
 
         WarMenu.End() 
       elseif WarMenu.Begin('demo_menu') then
         if gangName == nil then
-          local pressed, inputText = WarMenu.InputButton('Gang name:', nil, _inputText)
+          local pressed, inputText = WarMenu.InputButton('팩션 이름:', nil, _inputText)
           if pressed then
               if inputText then
                   gangName = inputText
               end
           end
         else
-          local pressed, inputText = WarMenu.InputButton('Gang name: ~r~' ..gangName, nil, _inputText)
+          local pressed, inputText = WarMenu.InputButton('팩션 이름: ~r~' ..gangName, nil, _inputText)
                 if pressed then
                     if inputText then
                         gangName = inputText
@@ -98,7 +98,7 @@ AddEventHandler('ls-gang:client:openCreation', function()
                   if maxOnes then
                       maxMembers = maxOnes
                   else
-                      ESX.ShowNotification('Max members must be a number')
+                      ESX.ShowNotification('숫자로 입력해주세요.')
                   end
               end
           end
@@ -110,15 +110,17 @@ AddEventHandler('ls-gang:client:openCreation', function()
                     if maxOnes then
                         maxMembers = maxOnes
                     else
-                        ESX.ShowNotification('Max members must be a number')
+                        ESX.ShowNotification('숫자로 입력해주세요.')
                     end
                 end
             end
         end
 
-        if WarMenu.Button('Add rank') then
+        if WarMenu.Button('계급 추가') then
           ESX.ShowNotification(' ~r~Y~w~ 를 누르면 마지막으로 생성한 계급이 삭제 됩니다..')
           gangRankToCha = gangRankToCha + 1
+          print("rank",ranks)
+          print("ranks LEngth",ranks.length)
           table.insert(ranks, {label = gangRankToCha, num = gangRankToCha})
         end
 
@@ -127,7 +129,7 @@ AddEventHandler('ls-gang:client:openCreation', function()
         end
 
         for i = 1, #ranks, 1 do
-            local pressed, inputText = WarMenu.InputButton('Rank: ' ..ranks[i]['label'], nil, _inputText)
+            local pressed, inputText = WarMenu.InputButton('계급 이름: ' ..ranks[i]['label'], nil, _inputText)
             if pressed then
                 if inputText then
                     ranks[i]['label'] = inputText
@@ -141,7 +143,75 @@ AddEventHandler('ls-gang:client:openCreation', function()
         end
 
       WarMenu.End()
-      
+    elseif WarMenu.Begin('demo_style') then
+      local _, comboBoxIndex = WarMenu.ComboBox('Organization type: ', posibleOnes, gangStyle)
+      if gangStyle ~= comboBoxIndex then
+          gangStyle = comboBoxIndex
+      end
+      if red == nil then
+          local pressed, inputText = WarMenu.InputButton('Red color:', nil, _inputText)
+          if pressed then
+              if inputText then
+                  red = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      else
+          local pressed, inputText = WarMenu.InputButton('Red color: ~r~' ..red, nil, _inputText)
+          if pressed then
+              if inputText then
+                  red = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      end
+      if green == nil then
+          local pressed, inputText = WarMenu.InputButton('Green color:', nil, _inputText)
+          if pressed then
+              if inputText then
+                  green = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      else
+          local pressed, inputText = WarMenu.InputButton('Green color: ~r~' ..green, nil, _inputText)
+          if pressed then
+              if inputText then
+                  green = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      end
+      if blue == nil then
+          local pressed, inputText = WarMenu.InputButton('Blue color:', nil, _inputText)
+          if pressed then
+              if inputText then
+                  blue = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      else
+          local pressed, inputText = WarMenu.InputButton('Blue color: ~r~' ..blue, nil, _inputText)
+          if pressed then
+              if inputText then
+                  blue = inputText
+              end
+          end
+          if WarMenu.IsItemHovered() then
+              WarMenu.ToolTip('RGB (Example) -> 255, 255, 255')
+          end
+      end
+      WarMenu.End()
       else
         return
       end
