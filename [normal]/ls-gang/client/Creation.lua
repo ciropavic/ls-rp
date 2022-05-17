@@ -118,8 +118,6 @@ AddEventHandler('ls-gang:client:openCreation', function()
 
         if WarMenu.Button('Add rank') then
           ESX.ShowNotification(' ~r~Y~w~ 를 누르면 마지막으로 생성한 계급이 삭제 됩니다..')
-          local _currentType = TriggerServerEvent('ls-gang:Sgettypes');
-          print(" G_Gv2- Creation.lua - 124".._currentType)
           gangRankToCha = gangRankToCha + 1
           table.insert(ranks, {label = gangRankToCha, num = gangRankToCha})
         end
