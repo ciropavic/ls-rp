@@ -67,6 +67,11 @@ AddEventHandler('ls-gang:client:openCreation', function()
         WarMenu.MenuButton('Confirm creation', 'confirm')
         WarMenu.MenuButton('Exit', 'demo_exit')
 
-        WarMenu.End() end
+        WarMenu.End() 
+      else
+        return
+      end
+
+      Citizen.Wait(0)
     end
   end)
