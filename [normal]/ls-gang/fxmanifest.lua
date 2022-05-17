@@ -8,8 +8,9 @@ version '1.0'
 
 client_scripts {
 	'@es_extended/locale.lua',
+  'Locale.lua',
+  'Locales/*.lua',
 	'client/*.lua',
-	'locales/*.lua',
   'client/Modules/warmenu.lua',
   'client/Creation.lua',
   'client/Modules/Functions.lua',
@@ -21,11 +22,12 @@ client_scripts {
 }
 
 server_scripts {
+  'Locale.lua',
+  'Locales/*.lua',
 	'@es_extended/locale.lua',
   '@mysql-async/lib/MySQL.lua',
   'server/Modules/Functions.lua',
 	'server/main.lua',
-	'locales/*.lua'
 }
 
 shared_scripts {
