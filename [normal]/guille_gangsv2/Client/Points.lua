@@ -109,6 +109,8 @@ function openBossMenu()
 local element = {}
 table.insert(element,{label = _U("--expel--"), type = "expel"})
 table.insert(element,{label = _U("--promote--"), type = "promote"})
+table.insert(element,{label = _U("--invite--"), type = "invite"})
+
   ESX.UI.Menu.Open('default',GetCurrentResourceName(),"Boss_Menu",{
     title = _U("BOSS_MENU"),
     align = "middle",
@@ -118,6 +120,9 @@ table.insert(element,{label = _U("--promote--"), type = "promote"})
       openExMenu()
       menu.close()
     elseif data.current.type == "promote" then
+      print("성공!")
+      menu.close()
+    elseif data.current.type == "invite" then
       print("성공!")
       menu.close()
     end
@@ -138,6 +143,23 @@ end
 
 RegisterNUICallback("member", function(cb)
     TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
+end)
+
+function openPromoteMenu()
+  local data = {}
+  if #gangData.members == 0 then
+    return
+  end
+  local cb ="promote"
+  for k, v in ipairs(gangData.members) do
+    table.insert(data,{text = v.members.name.. "-" .. v.members.rank, toDo = v.member.steam})
+  end
+end
+
+RegisterNUICallback("promote", function(cb)
+  print("GangData"..gangData)
+  print("GangRank" ..rankNum)
+  -- TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
 end)
 
 RegisterNUICallback("vehs", function(cb)
