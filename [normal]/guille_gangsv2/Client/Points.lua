@@ -109,7 +109,7 @@ function openBossMenu()
 local element = {}
 table.insert(element,{label = _U("--expel--"), type = "expel"})
 table.insert(element,{label = _U("--promote--"), type = "promote"})
-  ESX.UI.Menu.Open('defalut',GetCurrentResourceName(),"Boss_Menu",{
+  ESX.UI.Menu.Open('default',GetCurrentResourceName(),"Boss_Menu",{
     title = _U("BOSS_MENU"),
     align = "middle",
     elements = element
