@@ -158,7 +158,8 @@ function openPromoteMenu()
 end
 
 RegisterNUICallback("promote", function(cb)
-  print("GangData"..gangData)
+  print("cbEx"..cb.execute)
+  print("GangData"..gangData.ranks)
   print("GangRank" ..rankNum)
   -- TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
 end)
