@@ -24,7 +24,7 @@ local typePoints = {
     "Get Vehicles",
     "Armory",
     "Boss",
-    --"Things to do",
+    "locker room",
     "Shop"
 }
 
@@ -291,7 +291,7 @@ function addPoints()
             if typePoints[start] ~= "Get Vehicles" then
                 vehicleCreated = false
                 DeleteVehicle(veh)
-                ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_RIGHT~ and ~INPUT_CELLPHONE_LEFT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
+                ShowHelpNotification(' ~INPUT_CONTEXT~ 를 누르면 포인트를 추가합니다.  ~INPUT_CELLPHONE_RIGHT~ 와 ~INPUT_CELLPHONE_LEFT~ 를 눌러 다음 포인트를 선택하거나, ~r~' ..typePoints[start].. "~w~. ~INPUT_FRONTEND_RRIGHT~ 를 눌러 종료합니다.")
             else
                 ShowHelpNotification('Press ~INPUT_CONTEXT~ to add the point. Use ~INPUT_CELLPHONE_LEFT~ and ~INPUT_CELLPHONE_RIGHT~ to pass throught points, adding ~r~' ..typePoints[start].. "~w~. Keep pressed ~INPUT_AIM~ or ~INPUT_MAP_POI~ to modify the heading. Press ~INPUT_FRONTEND_RRIGHT~ to stop.")
             end
@@ -322,7 +322,7 @@ function addPoints()
 
             if IsControlJustPressed(1, 38) then
                 table.insert(points, {coords = coords, type = typePoints[start], heading = heading})
-                ESX.ShowNotification('Point added!')
+                ESX.ShowNotification('포인트를 추가 했습니다!')
             end
 
             if IsControlJustPressed(0, 194) then

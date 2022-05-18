@@ -14,16 +14,16 @@ Config['groups'] = {
     "superadmin"
 }
 
-Config['saveVehNotif'] = "Press   ~INPUT_CONTEXT~to save the vehicle"
+Config['saveVehNotif'] = "차량을 격납할려면 ~INPUT_CONTEXT~ 키를 누르세요"
 
-Config['getVehNotif'] =  "Press   ~INPUT_CONTEXT~to get the gang vehicles"
+Config['getVehNotif'] =  "차량을 꺼낼려면  ~INPUT_CONTEXT~ 키를 누르세요."
 
-Config['armorNotif'] = "Press   ~INPUT_CONTEXT~to access the armory"
+Config['armorNotif'] = "무기고를 열려면 ~INPUT_CONTEXT~ 키를 누르세요"
 
-Config['bossNotif'] = "Press   ~INPUT_CONTEXT~to access to the boss menu"
+Config['bossNotif'] = "보스 메뉴를 열려면 ~INPUT_CONTEXT~ 키를 누르세요"
 
-Config['toDoNotif'] = "Press   ~INPUT_CONTEXT~to see the things that you must do"
+Config['lockerNotif'] = "락커룸을 열려면   ~INPUT_CONTEXT~ 키를 누르세요"
 
-Config['shopNotif'] = "Press   ~INPUT_CONTEXT~to see the shop"
+Config['shopNotif'] = " 상점을 열려면 ~INPUT_CONTEXT~ 키를 누르세요 "
 
-Config['notBossNotif'] = "Only the ~r~boss~w~ can use this menu"
+Config['notBossNotif'] = "당신은 팩션 ~r~리더~w~ 가 아니기에, 이용할 수 없습니다. "

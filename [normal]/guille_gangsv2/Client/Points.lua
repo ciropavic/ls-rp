@@ -76,8 +76,8 @@ function enablePoints()
                                 else
                                     ShowFloatingHelpNotification(Config['notBossNotif'], vector3(v.coords.x, v.coords.y, v.coords.z))
                                 end
-                            elseif v.type == "Things to do" then
-                                ShowFloatingHelpNotification(Config['toDoNotif'], vector3(v.coords.x, v.coords.y, v.coords.z))
+                            elseif v.type == "locker room" then
+                                ShowFloatingHelpNotification(Config['lockerNotif'], vector3(v.coords.x, v.coords.y, v.coords.z))
                             elseif v.type == "Shop" then
                                 ShowFloatingHelpNotification(Config['shopNotif'], vector3(v.coords.x, v.coords.y, v.coords.z))
                                 if IsControlJustPressed(1, 38) then
@@ -105,8 +105,25 @@ function openVehMenu()
     TriggerEvent("guille_cont:client:open", _U("veh_menu"), data, cb, false)
     return
 end
-
 function openBossMenu()
+local element = {}
+table.insert(element,{label = _U("--expel--"), type = "expel"})
+table.insert(element,{label = _U("--promote--"), type = "promote"})
+  ESX.UI.Menu.Open('defalut',GetCurrentResourceName(),"Boss_Menu",{
+    title = _U("BOSS_MENU"),
+    align = "middle",
+    elements = element
+  }, function(data,menu)
+    if data.current.type == "expel" then 
+      openExMenu()
+      menu.close()
+    elseif data.current.type == "promote" then
+      print("성공!")
+      menu.close()
+    end
+  end)
+end
+function openExMenu()
     local data = {}
     if #gangData.members == 0 then
         return

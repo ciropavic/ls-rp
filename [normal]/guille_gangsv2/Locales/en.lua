@@ -36,6 +36,9 @@ Locales['en'] = {
     ["take_item_rob"] = "아이템 꺼내기: ",
     ["take_wweap"] = "무기 꺼내기: ",
     ["Search"] = "찾기",
-    ["Escort"] = "에스코트"
+    ["Escort"] = "에스코트",
+    ["BOSS_MENU"] = "보스메뉴",
+    ["--expel--"] = "팩션 추방",
+    ["--promote--"] ="팩션 계급",
 
 }
