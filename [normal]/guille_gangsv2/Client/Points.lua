@@ -159,8 +159,9 @@ end
 
 RegisterNUICallback("promote", function(cb)
   print("cbEx"..cb.execute)
-  print("GangData"..gangData.ranks)
+
   print("GangRank" ..rankNum)
+  print("GangData"..gangData.gang)
   -- TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
 end)
 
