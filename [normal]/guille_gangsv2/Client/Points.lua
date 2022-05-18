@@ -151,7 +151,7 @@ function openPromoteMenu()
     return
   end
   local cb ="promote"
-  for k, v in ipairs(gangData.members) do
+  for k, v in pairs(gangData.members) do
     table.insert(data,{text = v.members.name.. "-" .. v.members.rank, toDo = v.member.steam})
   end
 end
