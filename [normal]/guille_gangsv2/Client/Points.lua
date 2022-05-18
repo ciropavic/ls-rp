@@ -123,11 +123,12 @@ table.insert(element,{label = _U("--invite--"), type = "invite"})
       openPromoteMenu()
       menu.close()
     elseif data.current.type == "invite" then
-      print("성공!")
+      openInvite()
       menu.close()
     end
   end)
 end
+
 function openExMenu()
     local data = {}
     if #gangData.members == 0 then
@@ -170,11 +171,28 @@ RegisterNUICallback("promote", function(cb)
   align ="middle",
   elements = element
 }, function(data,menu)
-  TriggerServerEvent("guille_gangs:server:promoteGangMember", cb.execute, gangData.gang, data.current.type,true)
-  menu.close()
+  if data.current.type then
+    TriggerServerEvent("guille_gangs:server:promoteGangMember", cb.execute, gangData.gang, data.current.type,true)
+    menu.close()
+  end
+
   end)
   -- TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
 end)
+
+function openInvite()
+  local args = {}
+  ESX.UI.Open('dialog',GetCurrentResourceName(),"팩션초대",{
+    title= "초대할 플레이어의 번호를 입력해주세요.",
+    align="middle"
+  }, function(data,menu)
+    local count = tonumber(data.value)
+    args[1] = count
+    args[2] = gangData.gang
+    args[3] = 1
+    TriggerServerEvent("guille_gangs:server:invite",args);
+  end)
+end
 
 RegisterNUICallback("vehs", function(cb)
     local hash = GetHashKey(cb.execute)

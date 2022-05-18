@@ -99,6 +99,59 @@ AddEventHandler("guille_gangs:server:addGang", function(gangName, maxMembers, ra
     end
 end)
 
+RegisterServerEvent("guille_gangs:server:invite")
+AddEventHandler("guille_gangs:server:invite",function(args)
+  local _src = source
+    if isAllowed(_src) then
+        local id = args[1]
+        local rank = args[3]
+        if args[1] and args[2] and args[3] then
+            if id == "me" then
+                id = _src
+            end
+            local ply = getPlayerData(id)
+            local gang = args[2]
+            if players[ply.getSteam()] then
+                if gang == players[ply.getSteam()].Player().getGang() and rank == players[ply.getSteam()].Player().getRank() then
+                    log("Same gang")
+                    return
+                end
+            end
+            if gangs[gang] ~= nil then
+                if gangs[gang].gangInfo().isRankValid(rank) then
+                    if players[ply.getSteam()] then
+                        local plygang = players[ply.getSteam()].Player().getGang()
+                        local action = gangs[plygang].gangActions()
+                        if plygang then
+                            action.removeMember(ply.getSteam(), true, function(result)
+                                if result then
+                                    log("Gang member removed")
+                                end
+                            end)
+                        end
+                    end
+                    local newgang = gangs[gang].gangActions()
+                    newgang.addMember(id, gang, rank, function(result)
+                        if result then
+                            log("Success changing gang")
+                        end
+                    end)
+                else
+                    TriggerClientEvent("guille_gangs:client:notify", _src, "That rank does not exist")
+                end
+            else
+                TriggerClientEvent("guille_gangs:client:notify", _src, "That gang does not exist")
+            end
+        else
+          TriggerClientEvent("guille_gangs:client:okoknotify","ID,팩션이름,RANK 순으로 정확히 입력해주세요.",'error')
+            -- TriggerClientEvent("guille_gangs:client:notify", _src, "Some arguments are missing")
+        end
+    else
+      TriggerClientEvent("guille_gangs:client:okoknotify","당신은 사용할 권한이 없습니다.",'error')
+        -- TriggerClientEvent("guille_gangs:client:notify", _src, "You are not allowed to use this")
+    end
+end)
+
 RegisterCommand("setgang", function(source, args)
     local _src = source
     if isAllowed(_src) then

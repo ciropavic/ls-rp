@@ -67,12 +67,12 @@ AddEventHandler('guille_gangs:client:openCreation', function()
 
     while true do
         if WarMenu.Begin('demo') then
-            WarMenu.MenuButton('Gang Info', 'demo_menu')
-            WarMenu.MenuButton('Gang style', 'demo_style')
-            WarMenu.MenuButton('Gang vehicles', 'demo_vehicles')
-            WarMenu.MenuButton('Add points', 'demo_points')
-            WarMenu.MenuButton('Confirm creation', 'confirm')
-            WarMenu.MenuButton('Exit', 'demo_exit')
+          WarMenu.MenuButton('팩션 정보', 'demo_menu')
+          WarMenu.MenuButton('팩션 스타일', 'demo_style')
+          WarMenu.MenuButton('팩션 차량', 'demo_vehicles')
+          WarMenu.MenuButton('팩션 구역', 'demo_points')
+          WarMenu.MenuButton('팩션 만들기', 'confirm')
+          WarMenu.MenuButton('취소', 'demo_exit')
 
             WarMenu.End()
         elseif WarMenu.Begin('demo_menu') then
