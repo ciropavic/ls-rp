@@ -120,7 +120,7 @@ table.insert(element,{label = _U("--invite--"), type = "invite"})
       openExMenu()
       menu.close()
     elseif data.current.type == "promote" then
-      print("성공!")
+      openPromoteMenu()
       menu.close()
     elseif data.current.type == "invite" then
       print("성공!")
