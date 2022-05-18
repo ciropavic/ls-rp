@@ -154,6 +154,7 @@ function openPromoteMenu()
   for k, v in pairs(gangData.members) do
     table.insert(data, {text = v.member.name.. " - " ..v.member.rank, toDo = v.member.steam})
   end
+  TriggerEvent("guille_cont:client:open", _U("click_to_promote"), data, cb, false)
 end
 
 RegisterNUICallback("promote", function(cb)

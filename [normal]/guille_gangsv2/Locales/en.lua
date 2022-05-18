@@ -8,6 +8,7 @@ Locales['en'] = {
     ['sure'] = "입력한 정보가 맞습니까?",
     ['veh_menu'] = "차량메뉴",
     ['click_to_ex'] = "멤버를 클릭하여 추방합니다.",
+    ['click_to_promote'] = "멤버를 클릭하여 계급을 변경합니다.",
     ['you_deleted'] = "삭제했습니다.",
     ['not_in_veh'] = "차량에 탑승하지 않았습니다.",
     ['shop_menu'] = "상점메뉴",
@@ -41,5 +42,6 @@ Locales['en'] = {
     ["--expel--"] = "팩션 추방",
     ["--promote--"] ="팩션 계급",
     ["--invite--"] = "팩션 초대",
+    
 
 }
