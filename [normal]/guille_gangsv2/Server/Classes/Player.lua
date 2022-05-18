@@ -89,7 +89,34 @@ function getGangData(gang, maxmembers, ranks, colors, vehicles, points, members,
 
     function this.gangActions()
         local act = {}
-
+        function act.setMemberRank(steam,change,OboWombo,cb)
+          for k, v in pairs(this.members) do
+            if v.member.steam == steam then
+            v.member.rank = change
+                MySQL.Async.execute("UPDATE guille_gangsv2 SET members=@member WHERE gang=@gang", {
+                  ['@member'] = json.encode(this.members),
+                  ['@gang'] = this.gang
+              }, function(row)
+                  if row then
+                      if plys[steam] then
+                          local id = plys[steam].getSource()
+                          players[steam] = nil
+                          if not change then
+                              TriggerClientEvent("guille_gangs:client:getGang", id)
+                          end
+                      end
+                      if cb then
+                          return cb(true)
+                      else
+                          return true
+                      end
+                  end
+              end)
+              break
+            end
+          end
+        end
+        
         function act.removeMember(steam, change, OboWombo, cb)
             for k, v in pairs(this.members) do
                 if v.member.steam == steam then

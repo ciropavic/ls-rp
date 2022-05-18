@@ -19,6 +19,22 @@ AddEventHandler("guille_gangs:server:removeGangMember", function(steam, gang, Ob
     end
 end)
 
+RegisterServerEvent("guille_gangs:server:promoteGangMember")
+AddEventHandler("guille_gangs:server:promoteGangMember",function (steam,gang,rank,OboWombo)
+  local _src = source
+  if isAllowed(_src) or OboWombo then
+    local plygang = players[steam].Player().getGang()
+    if plygang then
+      local actgang = gangs[plygang].gangActions()
+      actgang.setMemberRank(steam,rank,OboWombo,function(result)
+        if result and not OboWombo then
+          TriggerClientEvent("guille_gangs:client:continueEditing", _src, gang)
+        end
+      end)
+    end
+  end
+end)
+
 RegisterServerEvent("guille_gangs:server:deleteGang")
 AddEventHandler("guille_gangs:server:deleteGang", function(gang)
     local _src = source

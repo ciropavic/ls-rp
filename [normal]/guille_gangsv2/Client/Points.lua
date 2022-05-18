@@ -158,10 +158,21 @@ function openPromoteMenu()
 end
 
 RegisterNUICallback("promote", function(cb)
-  print("cbEx"..cb.execute)
-
-  print("GangRank" ..rankNum)
-  print("GangData"..gangData.gang)
+  -- print("cbEx"..cb.execute)
+  -- print("GangRank" ..rankNum)
+  local element = {}
+  for k, v in pairs(gangData.ranks) do
+    -- print(v.num .. " - " .. v.label)
+    table.insert(element,{label = v.label,type= v.num})
+  end
+  ESX.UI.Menu.Open('default',GetCurrentResourceName(),"계급변경",{
+  title = "계급리스트",
+  align ="middle",
+  elements = element
+}, function(data,menu)
+  TriggerServerEvent("guille_gangs:server:promoteGangMember", cb.execute, gangData.gang, data.current.type,true)
+  menu.close()
+  end)
   -- TriggerServerEvent("guille_gangs:server:removeGangMember", cb.execute, gangData.gang, true)
 end)
 
