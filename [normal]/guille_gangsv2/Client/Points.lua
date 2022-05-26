@@ -182,7 +182,7 @@ end)
 
 function openInvite()
   local args = {}
-  ESX.UI.Open('dialog',GetCurrentResourceName(),"팩션초대",{
+  ESX.UI.Menu.Open('dialog',GetCurrentResourceName(),"팩션초대",{
     title= "초대할 플레이어의 번호를 입력해주세요.",
     align="middle"
   }, function(data,menu)

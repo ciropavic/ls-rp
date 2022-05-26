@@ -27,7 +27,7 @@ AddEventHandler("guille_gangs:server:promoteGangMember",function (steam,gang,ran
     if plygang then
       local actgang = gangs[plygang].gangActions()
       actgang.setMemberRank(steam,rank,OboWombo,function(result)
-        if result and not OboWombo then
+        if result then
           TriggerClientEvent("guille_gangs:client:continueEditing", _src, gang)
         end
       end)
