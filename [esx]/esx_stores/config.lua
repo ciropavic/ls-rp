@@ -127,14 +127,14 @@ Config.market_types = {
 				['amount_to_delivery'] = 15,
 				['page'] = 2
 			},
-			['dtest'] = {
-				['name'] = "테스트",
-				['price_to_customer'] = 250,
-				['price_to_owner'] = 50,
-				['amount_to_owner'] = 15,
-				['amount_to_delivery'] = 15,
-				['page'] = 1
-			}
+			-- ['dtest'] = {
+			-- 	['name'] = "테스트",
+			-- 	['price_to_customer'] = 250,
+			-- 	['price_to_owner'] = 50,
+			-- 	['amount_to_owner'] = 15,
+			-- 	['amount_to_delivery'] = 15,
+			-- 	['page'] = 1
+			-- }
 		
 		},
 		['pagination'] = {						-- Create pages to your market items (max 5 pages)
@@ -197,15 +197,15 @@ Config.market_types = {
 				['page'] = 0
 			},
 			
-			['WEAPON_GLOCK_PACKAGE'] = {
-				['name'] = "Glock",
-				['price_to_customer'] = 5000,
-				['price_to_owner'] = 160000,
-				['amount_to_owner'] = 1,
-				['amount_to_delivery'] = 1,
-				['page'] = 1,
-				-- ['license'] = 1
-			},
+			-- ['WEAPON_GLOCK_PACKAGE'] = {
+			-- 	['name'] = "Glock",
+			-- 	['price_to_customer'] = 5000,
+			-- 	['price_to_owner'] = 160000,
+			-- 	['amount_to_owner'] = 1,
+			-- 	['amount_to_delivery'] = 1,
+			-- 	['page'] = 1,
+			-- 	-- ['license'] = 1
+			-- },
 			['WEAPON_PISTOL_AMMO'] = {
 				['name'] = "권총탄창",
 				['price_to_customer'] = 3000,

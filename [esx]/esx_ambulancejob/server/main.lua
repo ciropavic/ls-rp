@@ -34,7 +34,7 @@ AddEventHandler('esx_ambulancejob:revive', function(playerId)
 				
 				xTarget.triggerEvent('esx_ambulancejob:revive')
 				xTarget.triggerEvent("esx_ambulancejob:stopbleeding")
-				xTarget.showNotification("소생을 받아 $800 이 예금에서 차감됩니다.")
+				xTarget.showNotification("소생을 받아 $1000 이 예금에서 차감됩니다.")
 			else
 				xPlayer.showNotification(_U('revive_complete', xTarget.name))
 				xTarget.triggerEvent('esx_ambulancejob:revive')

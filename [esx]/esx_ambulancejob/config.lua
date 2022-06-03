@@ -4,14 +4,14 @@ Config.DrawDistance               = 20.0 -- How close do you need to be in order
 
 Config.Marker                     = {type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false}
 
-Config.ReviveReward               = 800  -- Revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 1000  -- Revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- Enable anti-combat logging? (Removes Items when a player logs back after intentionally logging out while dead.)
 Config.LoadIpl                    = true -- Disable if you're using fivem-ipl or other IPL loaders
 
 Config.Locale                     = 'en'
 
-Config.EarlyRespawnTimer          = 120 * 1000  -- time til respawn is available
-Config.BleedoutTimer              = 60 * 1000 -- time til the player bleeds out
+Config.EarlyRespawnTimer          = 600 * 1000  -- time til respawn is available
+Config.BleedoutTimer              = 600 * 1000 -- time til the player bleeds out
 
 Config.EnablePlayerManagement     = true -- Enable society managing (If you are using esx_society).
 
